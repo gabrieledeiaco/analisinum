@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        button{
+            display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  font-family: fantasy;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '�';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+        
+
+p{
+    font-size: 20px;
+    font-family: fantasy;
+}
+
+  
+  
+
+  
+
+    </style>
+
+   
+  </head>
+  <body>
+    <div class="container-fluid">
+        <h1>Fattorizzatore di base</h1>
+        <p>Cerca i fattori dei numeri da: </p>
+        <input id="mioinput" type="text">
+        <p>a: </p>
+        
+        <input id="mioinput2" type="text">
+        <br><br>
+      <button onclick="EseguiCodice();" id="miobottone">es1</button>
+
+      <button onclick="EseguiCodice2();" id="miobottone">es2</button>
+      </div>
+
+    
+    <script>
+   
+function EseguiCodice() {
+    let estremoSuperiore=0;
+    let estremoInferiore=0;
+    estremoSuperiore=document.getElementById("mioinput2").value;
+    estremoInferiore=document.getElementById("mioinput").value;
+    document.write("Fattorizza i numeri da : "+estremoInferiore+" a "+estremoSuperiore);
+    document.write("<br>");
+    for(let i=estremoInferiore;i<=estremoSuperiore;i++)
+       {
+        document.write("<span>"+ i+" </span> ");  
+        document.write("<span>    Fattori: "+fattorizzatore(i)+" </span><br>");  
+       }
+    
+    document.write("<br>");
+}
+        function fattorizzatore(n)
+        {
+          let fattore=1;
+          let fattoriOUT="";
+          let contafattori=1;
+          let x;
+          let y;
+           for(fattore=1;fattore<=n/2;fattore++)
+           {
+               if(n%fattore==0)
+               {
+                 fattoriOUT=fattoriOUT+fattore+ " ";
+                 contafattori++;
+               }
+
+           }
+         
+            return fattoriOUT+" #"+contafattori;
+        }
+
+
+//--------------------------------------------------------------------------------------------
+
+
+
+
+        function EseguiCodice2() {
+    let estremoSuperiore=0;
+    let estremoInferiore=0;
+    estremoSuperiore=document.getElementById("mioinput2").value;
+    estremoInferiore=document.getElementById("mioinput").value;
+    document.write("Fattorizza i numeri da : "+estremoInferiore+" a "+estremoSuperiore);
+    document.write("<br>");
+    for(let i=estremoInferiore;i<=estremoSuperiore;i++)
+       {
+        document.write("<span>"+ i+" </span> ");  
+        document.write("<span>    Fattori: "+fattorizzatore2(i)+" </span><br>");  
+       }
+    
+    document.write("<br>");
+}
+        function fattorizzatore2(n)
+        {
+          let fattore=1;
+          let fattoriOUT="";
+          let contafattori=1;
+          let x;
+          let y;
+           for(fattore=1;fattore<=n/2;fattore++)
+           {
+               if(n%fattore==0)
+               {
+                 fattoriOUT=fattoriOUT+fattore+ " ";
+                 contafattori++;
+               }
+
+           }
+         
+   
+           if(contafattori>2)
+                 {
+                    return fattoriOUT+ " #"+contafattori+"<br>";
+                 }
+                 else
+                 {
+                    return " xxxxx"+"<br>";
+                 }
+        }
+   
+       </script>
+
+  </body>
+</html>
